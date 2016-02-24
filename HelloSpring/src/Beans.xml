@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+	default-init-method="init" default-destroy-method="destroy">
+
+	<bean id="helloWorld" class="dylan.HelloWorld">
+		<property name="message" value="Hello World!" />
+	</bean>
+
+	<bean id="s_helloWorld" class="dylan.singletondemo.HelloWorld"
+		scope="singleton"></bean>
+
+	<bean id="p_helloWorld" class="dylan.prototypedemo.HelloWorld"
+		scope="prototype"></bean>
+
+	<bean id="l_helloWorld" class="dylan.lifecycledemo.HelloWorld"></bean>
+
+	<bean id="b_helloWorld" class="dylan.bpp.HelloWorld">
+		<property name="message" value="Hello Spring BeanPostProcessor" />
+	</bean>
+
+	<bean class="dylan.bpp.InitHelloWorld"></bean>
+
+	<bean id="bd_helloWorld" class="dylan.bdi.HelloWorld">
+		<property name="message" value="Hello World"></property>
+		<property name="message2" value="Hello Spring"></property>
+	</bean>
+
+	<bean id="helloSpring" class="dylan.bdi.HelloSpring" parent="bd_helloWorld">
+		<property name="message2" value="Hello Bean Definition Inheritance"></property>
+		<property name="message3" value="Hello China"></property>
+	</bean>
+
+	<bean id="textEditor" class="dylan.iib.TextEditor">
+		<property name="spellChecker">
+			<bean id="spellChecker" class="dylan.iib.SpellChecker" />
+		</property>
+	</bean>
+
+	<bean id="javaCollection" class="dylan.ic.JavaCollection">
+		<property name="addressList">
+			<list>
+				<value>India</value>
+				<value>United Kingdom</value>
+				<value>USA</value>
+				<value>USA</value>
+			</list>
+		</property>
+		<property name="addressSet">
+			<set>
+				<value>India</value>
+				<value>United Kingdom</value>
+				<value>USA</value>
+				<value>USA</value>
+			</set>
+		</property>
+		<property name="addressMap">
+			<map>
+				<entry key="1" value="India" />
+				<entry key="2" value="United Kingdom" />
+				<entry key="3" value="USA" />
+				<entry key="4" value="USA" />
+			</map>
+		</property>
+		<property name="addressProp">
+			<props>
+				<prop key="one">India</prop>
+				<prop key="two">United Kingdom</prop>
+				<prop key="three">USA</prop>
+				<prop key="four">USA</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="textEditor2" class="dylan.byname.TextEditor2" autowire="byName">
+		<property name="name" value="Generic Text Editor2......"></property>
+	</bean>
+	<bean id="spellChecker2" class="dylan.byname.SpellChecker2"></bean>
+
+	<bean id="textEditor3" class="dylan.bytype.TextEditor3" autowire="byType">
+		<property name="name" value="Generic Text Editor3......"></property>
+	</bean>
+	<bean id="SpellChecker3" class="dylan.bytype.SpellChecker3"></bean>
+
+	<bean id="textEditor4" class="dylan.byconstructor.TextEditor4"
+		autowire="constructor">
+		<constructor-arg value="Generic Text Editor4......" />
+	</bean>
+
+	<bean id="SpellChecker4" class="dylan.byconstructor.SpellChecker4" />
+</beans>

@@ -1,0 +1,110 @@
+# Overview
+
+## Dependency Injection(DI)
+
+## Aspect Oriented Programming (AOP):
+### cross-cutting concerns
+>The key unit of modularity in OOP is the class, whereas in AOP the unit of modularity is the aspect. Whereas DI helps you decouple your application objects from each other, AOP helps you decouple cross-cutting concerns from the objects that they affect.
+
+# Architecture
+![framework](images/2016/02/Screen Shot 2016-02-06 at 15.06.29.png)
+
+# IoC Containers
+> The Spring container uses dependency injection (DI) to manage the components that make up an application.
+
+Spring provides following two distinct types of containers.
+
+S.N.	Container & Description
+1	Spring BeanFactory Container
+This is the simplest container providing basic support for DI and defined by the org.springframework.beans.factory.BeanFactory interface. The BeanFactory and related interfaces, such as BeanFactoryAware, InitializingBean, DisposableBean, are still present in Spring for the purposes of backward compatibility with the large number of third-party frameworks that integrate with Spring.
+
+2	Spring ApplicationContext Container
+This container adds more enterprise-specific functionality such as the ability to resolve textual messages from a properties file and the ability to publish application events to interested event listeners. This container is defined by the org.springframework.context.ApplicationContext interface.
+
+# Bean Definition
+The bean definition contains the information called configuration metadata which is needed for the container to know the followings:
+
+- How to create a bean
+- Bean's lifecycle details
+- Bean's dependencies
+
+# Spring Configuration Metadata
+There are following three important methods to provide configuration metadata to the Spring Container:
+
+- XML based configuration file.
+- Annotation-based configuration
+- Java-based configuration
+
+# Bean Scopes
+Scope	|Description
+--|--
+singleton|	This scopes the bean definition to a single instance per Spring IoC container (default).
+prototype	|This scopes a single bean definition to have any number of object instances.
+request|	This scopes a bean definition to an HTTP request. Only valid in the context of a web-aware Spring ApplicationContext.
+session|	This scopes a bean definition to an HTTP session. Only valid in the context of a web-aware Spring ApplicationContext.
+global-session|	This scopes a bean definition to a global HTTP session. Only valid in the context of a web-aware Spring ApplicationContext.
+
+# Bean Life Cycle
+
+# Bean Post Processors
+
+# Bean Definition Inheritance
+## Bean 定义模板
+
+# Dependency Injection
+
+S.N.	|Dependency Injection Type & Description
+--|--
+1	|Constructor-based dependency injection<br>Constructor-based DI is accomplished when the container invokes a class constructor with a number of arguments, each representing a dependency on other class.
+2 |Setter-based dependency injection<br>Setter-based DI is accomplished by the container calling setter methods on your beans after invoking a no-argument constructor or no-argument static factory method to instantiate your bean.
+
+## Injecting Inner Beans
+```
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+   <bean id="outerBean" class="...">
+      <property name="target">
+         <bean id="innerBean" class="..."/>
+      </property>
+   </bean>
+
+</beans>
+```
+
+# Injecting Collection
+
+Element|	Description
+--|--
+<list>|	This helps in wiring ie injecting a list of values, allowing duplicates.
+<set>	|This helps in wiring a set of values but without any duplicates.
+<map>|	This can be used to inject a collection of name-value pairs where name and value can be of any type.
+<props>|	This can be used to inject a collection of name-value pairs where the name and value are both Strings.
+> Element tag must be written with lowercase.
+
+# Injecting Bean References
+
+# Beans Auto-Wiring
+## Autowiring 'byName'
+## Autowiring 'byType'
+## Autowiring by Constructor
+
+# Annotation Based Configuration
+
+## @Autowired Annotation
+### @Autowired on Properties:
+> You can use @Autowired annotation on properties to get rid of the setter methods.
+### @Autowired on Constructors:
+> A constructor @Autowired annotation indicates that the constructor should be autowired when creating the bean, even if no <constructor-arg> elements are used while configuring the bean in XML file.
+### @Autowired with (required=false) option
+> By default, the @Autowired annotation implies the dependency is required similar to @Required annotation, however, you can turn off the default behavior by using (required=false) option with @Autowired.
+
+## @Qualifier Annotation
+
+## JSR-250 Annotations
+
+# Java Based Configuration
