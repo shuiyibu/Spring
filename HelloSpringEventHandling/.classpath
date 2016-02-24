@@ -15,7 +15,7 @@
 	<classpathentry kind="lib" path="lib/spring-beans-4.2.4.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/spring-context-4.2.4.RELEASE-javadoc.jar"/>
 	<classpathentry kind="lib" path="lib/spring-context-4.2.4.RELEASE-sources.jar"/>
-	<classpathentry kind="lib" path="lib/spring-context-4.2.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring-context-4.2.4.RELEASE.jar" sourcepath="lib/spring-context-4.2.4.RELEASE-javadoc.jar"/>
 	<classpathentry kind="lib" path="lib/spring-context-support-4.2.4.RELEASE-javadoc.jar"/>
 	<classpathentry kind="lib" path="lib/spring-context-support-4.2.4.RELEASE-sources.jar"/>
 	<classpathentry kind="lib" path="lib/spring-context-support-4.2.4.RELEASE.jar"/>

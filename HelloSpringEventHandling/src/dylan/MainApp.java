@@ -24,14 +24,10 @@ public class MainApp
 		// TODO Auto-generated method stub
 		context = new ClassPathXmlApplicationContext("Beans.xml");
 
-		// raise a start event
-		context.start();
+		CustomEventPublisher customEventPublisher = (CustomEventPublisher) context.getBean("customEventPublisher");
+		customEventPublisher.publish();
+		customEventPublisher.publish();
 
-		HelloWorld helloWorld = (HelloWorld) context.getBean("helloWorld");
-		helloWorld.getMessage();
-
-		// raise a stop event
-		context.stop();
 	}
 
 }

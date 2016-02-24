@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 3 elements from project &apos;HelloSpringEventHandling&apos;&#x0A;- Original project: &apos;HelloSpringEventHandling&apos;&#x0A;- Original elements:&#x0A;     dylan.CStartEventHandler.java&#x0A;     dylan.CStopEventHandler.java&#x0A;     dylan.HelloWorld.java" description="Delete elements" element1="/src&lt;dylan{CStartEventHandler.java" element2="/src&lt;dylan{HelloWorld.java" element3="/src&lt;dylan{CStopEventHandler.java" elements="3" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1456287231645" subPackages="false" version="1.0"/>
+</session>

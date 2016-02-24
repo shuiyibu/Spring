@@ -1,0 +1,16 @@
+/**
+ * 
+ */
+package dylan;
+
+import org.springframework.context.ApplicationEventPublisherAware;
+
+/**
+ * @author langdylan
+ *
+ * Feb 24, 2016 12:16:42 PM
+ */
+public class CustomEventPublisher implements ApplicationEventPublisherAware
+{
+
+}
